@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form>
+    <h2> Add a Color </h2>
+    <input type = "text" name = "color">
+    { % if items % }
+    { % for items in items % }
+    <input type = "hidden" name = "color" value = "{{items}}">
+    {% endfor %}
+    {% endif %}
+    <button>Add</button>
+
+    { % if item % }
+    <br>
+    <br>
+    
+    <h2> Color List </h2>
+    <ul>
+        {% for items in items % }
+        <li> {{ items | escape }} </li>
+             { % endfor % }
+        </ul>
+    { % endif % }
+         </form>
